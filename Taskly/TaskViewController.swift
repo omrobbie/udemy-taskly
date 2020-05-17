@@ -14,3 +14,16 @@ class TaskViewController: UITableViewController {
         super.viewDidLoad()
     }
 }
+
+extension TaskViewController {
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = "Item \(indexPath.row)"
+        return cell
+    }
+}
