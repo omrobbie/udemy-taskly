@@ -13,6 +13,8 @@
 		FC03CF77247108C200700EAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC03CF75247108C200700EAE /* Main.storyboard */; };
 		FC03CF79247108C400700EAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC03CF78247108C400700EAE /* Assets.xcassets */; };
 		FC03CF7C247108C400700EAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC03CF7A247108C400700EAE /* LaunchScreen.storyboard */; };
+		FC03CF8424710F5A00700EAE /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03CF8324710F5A00700EAE /* Task.swift */; };
+		FC03CF8624710F9C00700EAE /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03CF8524710F9C00700EAE /* TaskStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		FC03CF78247108C400700EAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC03CF7B247108C400700EAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC03CF7D247108C400700EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC03CF8324710F5A00700EAE /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		FC03CF8524710F9C00700EAE /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				FC03CF71247108C200700EAE /* SceneDelegate.swift */,
 				FC03CF73247108C200700EAE /* TaskViewController.swift */,
 				FC03CF75247108C200700EAE /* Main.storyboard */,
+				FC03CF8324710F5A00700EAE /* Task.swift */,
+				FC03CF8524710F9C00700EAE /* TaskStore.swift */,
 				FC03CF78247108C400700EAE /* Assets.xcassets */,
 				FC03CF7A247108C400700EAE /* LaunchScreen.storyboard */,
 				FC03CF7D247108C400700EAE /* Info.plist */,
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC03CF8624710F9C00700EAE /* TaskStore.swift in Sources */,
+				FC03CF8424710F5A00700EAE /* Task.swift in Sources */,
 				FC03CF74247108C200700EAE /* TaskViewController.swift in Sources */,
 				FC03CF70247108C200700EAE /* AppDelegate.swift in Sources */,
 				FC03CF72247108C200700EAE /* SceneDelegate.swift in Sources */,
