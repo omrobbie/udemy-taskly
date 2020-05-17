@@ -31,6 +31,14 @@ class TaskViewController: UITableViewController {
 
 extension TaskViewController {
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "To-Do" : "Done"
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 54
+    }
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return taskStore.tasks.count
     }
