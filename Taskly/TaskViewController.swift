@@ -89,4 +89,20 @@ extension TaskViewController {
 
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
+
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let doneAction = UIContextualAction(style: .normal, title: nil) { (action, sourceView, completion) in
+            self.taskStore.tasks[0][indexPath.row].isDone = true
+            let doneTask = self.taskStore.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .right)
+            self.taskStore.add(doneTask, at: 0, isDone: true)
+            tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .right)
+            completion(true)
+        }
+
+        doneAction.image = #imageLiteral(resourceName: "done")
+        doneAction.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+
+        return indexPath.section == 0 ? UISwipeActionsConfiguration(actions: [doneAction]) : nil
+    }
 }
