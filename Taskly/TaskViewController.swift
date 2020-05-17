@@ -75,4 +75,18 @@ extension TaskViewController {
         cell.textLabel?.text = item.name
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (action, sourceView, completion) in
+            let isDone = self.taskStore.tasks[indexPath.section][indexPath.row].isDone
+            self.taskStore.remove(at: indexPath.row, isDone: isDone)
+            self.tableView.deleteRows(at: [indexPath], with: .left)
+            completion(true)
+        }
+
+        deleteAction.image = #imageLiteral(resourceName: "delete")
+        deleteAction.backgroundColor = #colorLiteral(red: 0.8862745098, green: 0.1450980392, blue: 0.168627451, alpha: 1)
+
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
 }
