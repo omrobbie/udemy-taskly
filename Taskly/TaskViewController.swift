@@ -10,22 +10,10 @@ import UIKit
 
 class TaskViewController: UITableViewController {
 
-    var taskStore = TaskStore()
+    var taskStore: TaskStore!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let todoTasks = [
-            Task.init(name: "Meditate"),
-            Task.init(name: "Buy banana"),
-            Task.init(name: "Run a 5K"),
-        ]
-
-        let doneTasks = [
-            Task.init(name: "Watch NetFlix"),
-        ]
-
-        taskStore.tasks = [todoTasks, doneTasks]
     }
 
     @IBAction func btnAddTaskTapped(_ sender: Any) {
