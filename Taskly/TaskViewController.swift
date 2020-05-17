@@ -27,6 +27,22 @@ class TaskViewController: UITableViewController {
 
         taskStore.tasks = [todoTasks, doneTasks]
     }
+
+    @IBAction func btnAddTaskTapped(_ sender: Any) {
+        let alertController = UIAlertController(title: "Add Task", message: nil, preferredStyle: .alert)
+
+        let addAction = UIAlertAction(title: "Add", style: .default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Enter task name..."
+        }
+
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
+
+        present(alertController, animated: true)
+    }
 }
 
 extension TaskViewController {

@@ -30,7 +30,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Taskly" id="Jnk-BR-rca">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bDl-6A-VgV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bDl-6A-VgV">
+                            <connections>
+                                <action selector="btnAddTaskTapped:" destination="tnF-O5-ePO" id="7tY-mU-2oY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pxw-eb-CbR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
