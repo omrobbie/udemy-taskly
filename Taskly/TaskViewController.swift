@@ -29,7 +29,11 @@ class TaskViewController: UITableViewController {
 
         let addAction = UIAlertAction(title: "Add", style: .default) { _ in
             guard let name = alertController.textFields?.first?.text else {return}
-            print(name)
+            let newTask = Task(name: name)
+            self.taskStore.add(newTask, at: 0)
+
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .right)
         }
         addAction.isEnabled = false
 
