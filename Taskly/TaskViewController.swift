@@ -16,14 +16,28 @@ class TaskViewController: UITableViewController {
         super.viewDidLoad()
     }
 
+    @objc func handleTextChanged(_ sender: UITextField) {
+        guard let alertController = presentedViewController as? UIAlertController,
+            let addAction = alertController.actions.first,
+            let text = sender.text else {return}
+
+        addAction.isEnabled = !text.trimmingCharacters(in: .whitespaces).isEmpty
+    }
+
     @IBAction func btnAddTaskTapped(_ sender: Any) {
         let alertController = UIAlertController(title: "Add Task", message: nil, preferredStyle: .alert)
 
-        let addAction = UIAlertAction(title: "Add", style: .default)
+        let addAction = UIAlertAction(title: "Add", style: .default) { _ in
+            guard let name = alertController.textFields?.first?.text else {return}
+            print(name)
+        }
+        addAction.isEnabled = false
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
 
         alertController.addTextField { (textField) in
             textField.placeholder = "Enter task name..."
+            textField.addTarget(self, action: #selector(self.handleTextChanged), for: .editingChanged)
         }
 
         alertController.addAction(addAction)
