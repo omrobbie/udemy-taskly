@@ -60,17 +60,57 @@
 		FC03CF6E247108C200700EAE /* Taskly */ = {
 			isa = PBXGroup;
 			children = (
+				FC03CF8924721B2600700EAE /* Model */,
+				FC03CF8824721B2300700EAE /* View */,
+				FC03CF8724721B1B00700EAE /* Controller */,
+				FC03CF8A24721B9A00700EAE /* Helpers */,
+				FC03CF8B24721BD400700EAE /* System */,
+			);
+			path = Taskly;
+			sourceTree = "<group>";
+		};
+		FC03CF8724721B1B00700EAE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FC03CF73247108C200700EAE /* TaskViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FC03CF8824721B2300700EAE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC03CF75247108C200700EAE /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC03CF8924721B2600700EAE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC03CF8324710F5A00700EAE /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC03CF8A24721B9A00700EAE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC03CF8524710F9C00700EAE /* TaskStore.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FC03CF8B24721BD400700EAE /* System */ = {
+			isa = PBXGroup;
+			children = (
 				FC03CF6F247108C200700EAE /* AppDelegate.swift */,
 				FC03CF71247108C200700EAE /* SceneDelegate.swift */,
-				FC03CF73247108C200700EAE /* TaskViewController.swift */,
-				FC03CF75247108C200700EAE /* Main.storyboard */,
-				FC03CF8324710F5A00700EAE /* Task.swift */,
-				FC03CF8524710F9C00700EAE /* TaskStore.swift */,
 				FC03CF78247108C400700EAE /* Assets.xcassets */,
 				FC03CF7A247108C400700EAE /* LaunchScreen.storyboard */,
 				FC03CF7D247108C400700EAE /* Info.plist */,
 			);
-			path = Taskly;
+			path = System;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Taskly/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Taskly/System/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Taskly/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Taskly/System/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
