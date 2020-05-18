@@ -78,7 +78,7 @@ extension TaskViewController {
 
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { (action, sourceView, completion) in
-            let isDone = self.taskStore.tasks[indexPath.section][indexPath.row].isDone
+            guard let isDone = self.taskStore.tasks[indexPath.section][indexPath.row].isDone else {return}
             self.taskStore.remove(at: indexPath.row, isDone: isDone)
             self.tableView.deleteRows(at: [indexPath], with: .left)
             completion(true)
