@@ -39,8 +39,6 @@ class TaskViewController: UITableViewController {
 
             let indexPath = IndexPath(row: 0, section: 0)
             self.tableView.insertRows(at: [indexPath], with: .right)
-
-            TaskUtility.save(self.taskStore.tasks)
         }
         addAction.isEnabled = false
 
@@ -88,8 +86,6 @@ extension TaskViewController {
             guard let isDone = self.taskStore.tasks[indexPath.section][indexPath.row].isDone else {return}
             self.taskStore.remove(at: indexPath.row, isDone: isDone)
             self.tableView.deleteRows(at: [indexPath], with: .left)
-
-            TaskUtility.save(self.taskStore.tasks)
             completion(true)
         }
 
@@ -106,8 +102,6 @@ extension TaskViewController {
             tableView.deleteRows(at: [indexPath], with: .right)
             self.taskStore.add(doneTask, at: 0, isDone: true)
             tableView.insertRows(at: [IndexPath(row: 0, section: 1)], with: .right)
-
-            TaskUtility.save(self.taskStore.tasks)
             completion(true)
         }
 

@@ -12,10 +12,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    let taskStore = TaskStore()
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
         let taskController = window?.rootViewController?.children.first as? TaskViewController
-        taskController?.taskStore = TaskStore()
+        taskController?.taskStore = taskStore
+    }
+
+    func sceneDidDisconnect(_ scene: UIScene) {
+        TaskUtility.save(taskStore.tasks)
     }
 
     func getDummyData() -> TaskStore {
