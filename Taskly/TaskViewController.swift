@@ -10,7 +10,7 @@ import UIKit
 
 class TaskViewController: UITableViewController {
 
-    var taskStore: TaskStore!
+    var taskStore = TaskStore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
