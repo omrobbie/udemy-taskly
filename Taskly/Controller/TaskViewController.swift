@@ -19,6 +19,7 @@ class TaskViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
     }
 
     @objc func handleTextChanged(_ sender: UITextField) {
